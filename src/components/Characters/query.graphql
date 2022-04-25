@@ -1,0 +1,15 @@
+fragment CharacterParts_Characters on Character {
+  id
+  name
+  image
+}
+query Characters($page: Int, $filter: FilterCharacter) {
+  characters(page: $page, filter: $filter) {
+    info {
+      count
+    }
+    results {
+      ...CharacterParts_Characters
+    }
+  }
+}

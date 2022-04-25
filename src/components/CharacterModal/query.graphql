@@ -1,0 +1,18 @@
+fragment CharacterParts_Character on Character {
+  id
+  name
+  status
+  species
+  gender
+  type
+  image
+  episode {
+    id
+    name
+  }
+}
+query Character($id: ID!) {
+  character(id: $id) {
+    ...CharacterParts_Character
+  }
+}
